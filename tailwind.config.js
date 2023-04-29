@@ -9,7 +9,8 @@ module.exports = {
         'navbar': "#1a2038",
         'orang': "#E3821D",
         'blu': "#1B3578",
-        'blu2': "#2191DD"
+        'blu2': "#2191DD",
+        'background': "#161d2e"
       },
       fontFamily: {
         fira: ["Fira Code", "monospace"],

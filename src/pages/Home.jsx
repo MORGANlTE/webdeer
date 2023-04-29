@@ -5,6 +5,7 @@ import data from "../data";
 import { NavLink } from "react-router-dom";
 
 const Home = () => {
+
   return (
     <div className="">
       <Navbar />
@@ -21,7 +22,10 @@ const Home = () => {
         className="w-72 h-72 drop-shadow-[0_0_5px_rgba(68,150,255,0.25)] fixed -left-10 -bottom-9 opacity-50 hover:opacity-100 duration-500"
         draggable="false"
       />
-      <p className="absolute text-white bottom-1 right-2 font-fira">v{data.code.version}</p>
+      <NavLink to="/changelog" className="">
+        <p className="absolute text-white bottom-1 right-2 font-fira">v{data.changelog.logs[0].version}</p>
+      </NavLink>
+
     </div>
   );
 };

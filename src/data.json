@@ -1,6 +1,32 @@
 {
-    "code": {
-        "version": "0.0.2"
+    "changelog":{
+        "logs": [
+            {
+                "version": "0.4.0",
+                "title": "Changelog finale versie",
+                "description": "De Changelogs afgerond qua styling"
+            },   
+            {
+                "version": "0.3.1",
+                "title": "Navigatiebalk fix",
+                "description": "De navigatiebalk fout opgelost"
+            },   
+            {
+                "version": "0.3.0",
+                "title": "Changelogs",
+                "description": "De Changelogs toegevoegd voor de geïnteresseerden"
+            },
+            {
+                "version": "0.2.0",
+                "title": "Navigatie & pagina's toegevoegd",
+                "description": "Navbar, navigatie, iconen en wat afbeeldingen toegevoegd"
+            },
+            {
+                "version": "0.1.0",
+                "title": "Start van het project",
+                "description": "Project gestart in beta versie"
+            }
+        ]
     }
 }
 
