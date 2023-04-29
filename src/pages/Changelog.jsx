@@ -10,9 +10,10 @@ const Changelog = () => {
         {
             data.changelog.logs.map((log, i) => {     
             return (
-                <div className="mt-8 mb-5 text-white text-md font-fira">
+                <div className="pb-2 mt-8 mb-8 text-white text-md font-fira">
                     <h3 className='text-xl'>v{log.version} - {log.title}</h3>
                     <p className='text-slate-500'>{log.description}</p>
+                    <div className="border-b-[1px] border-gray-600 border-solid w-52 mx-auto pt-5"/>
                 </div>
             ) 
         })}
