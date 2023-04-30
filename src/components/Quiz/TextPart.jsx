@@ -3,7 +3,7 @@ import { useQuiz } from '../../context/QuizContext';
 
 const TextPart = (props) => {
     const style = {
-        height: 'calc(100vh - 64px)' /* 60px is the height of the navbar */
+        height: 'calc(100vh - 128px)' /* 60px is the height of the navbar */
       };
     const styleImg = {
         background: "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(27,53,120,1) 0%, rgba(26,32,56,1) 100%)"

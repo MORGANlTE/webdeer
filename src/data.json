@@ -2,6 +2,11 @@
     "changelog":{
         "logs": [
             {
+                "version": "0.8.0",
+                "title": "Progres balk",
+                "description": "Balk onderaan voor je voortgang te zien"
+            },            
+            {
                 "version": "0.7.0",
                 "title": "Textvak voor de quiz onderdelen",
                 "description": "Tekstvak tussen de vragen door"

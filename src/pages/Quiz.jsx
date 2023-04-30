@@ -7,10 +7,10 @@ import AnswerNoImage from '../components/Quiz/AnswerNoImage'
 import { useQuiz } from '../context/QuizContext'
 import webdeer from "../images/deer.png"; // with import
 import TextPart from '../components/Quiz/TextPart'
+import ProgressBar from '../components/Global/ProgressBar'
 
 const Quiz = () => {
-  const [vragenPerOnderdeel, setVragenPerOnderdeel] = useState(5);
-	const { stap } = useQuiz();
+	const { stap, categories, currentQuestion } = useQuiz();
 
   return (
     <>
@@ -45,6 +45,7 @@ const Quiz = () => {
             </OneImageQuestion>
           </>
         }
+      <ProgressBar completed={(currentQuestion/categories.length)*100}/>
         
     </>
   )
