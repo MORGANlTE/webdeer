@@ -2,6 +2,11 @@
     "changelog":{
         "logs": [
             {
+                "version": "0.7.0",
+                "title": "Textvak voor de quiz onderdelen",
+                "description": "Tekstvak tussen de vragen door"
+            },
+            {
                 "version": "0.6.0",
                 "title": "Quiz opslaan huidige vraag",
                 "description": "Onthouden van antwoorden, nog niet dynamisch"

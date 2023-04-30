@@ -4,6 +4,7 @@ export const QuizContext = createContext();
 export const useQuiz = () => useContext(QuizContext);
 
 export const QuizProvider = ({ children }) => {
+  const [stap, setStap] = useState(0);
   const [loading, setLoading] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState([]);
@@ -13,6 +14,7 @@ export const QuizProvider = ({ children }) => {
     { name: 'Category 3', score: 0, total: 0 },
     { name: 'Category 4', score: 0, total: 0 },
   ]);
+
 
   const questions = [
     // Questions for category 1
@@ -57,6 +59,11 @@ export const QuizProvider = ({ children }) => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     }
+    setStap(stap+1)
+  };
+
+  const nextStap = () => {
+    setStap(stap+1)
   };
 
 
@@ -106,10 +113,12 @@ export const QuizProvider = ({ children }) => {
       currentQuestion,
       answers,
       handleAnswer,
-      categories
+      categories,
+      stap,
+      nextStap
     }),
 
-    [loading, currentQuestion, answers, handleAnswer, categories]
+    [loading, currentQuestion, answers, handleAnswer, categories, stap, nextStap]
   );
 
   return (

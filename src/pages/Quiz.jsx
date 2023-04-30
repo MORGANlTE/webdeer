@@ -5,13 +5,21 @@ import AnswerWithImage from '../components/Quiz/AnswerWithImage'
 import OneImageQuestion from '../components/Quiz/OneImageQuestion'
 import AnswerNoImage from '../components/Quiz/AnswerNoImage'
 import { useQuiz } from '../context/QuizContext'
+import webdeer from "../images/deer.png"; // with import
+import TextPart from '../components/Quiz/TextPart'
 
 const Quiz = () => {
+  const [vragenPerOnderdeel, setVragenPerOnderdeel] = useState(5);
+	const { stap } = useQuiz();
 
   return (
     <>
         <Navbar/>
-
+        {
+          stap===0 && (
+            <TextPart text="Welkom gebruiker" subtext="Om te starten zouden we je graag je internet vaardigheidsniveau inschatten" imgurl={webdeer}/>
+          )
+        }
         {/* <div>
           <h2>{questionData.question}</h2>
           <ul>
@@ -22,19 +30,22 @@ const Quiz = () => {
             ))}
           </ul>
         </div> */}
-        <MultipleChoice4 titel="Hoe schat je je eigen vaardigheden in?">
-          <AnswerWithImage text="" url=""/>
-          <AnswerWithImage text="" url=""/>
-          <AnswerWithImage text="" url=""/>
-          <AnswerWithImage text="" url=""/>
-        </MultipleChoice4>
-        <OneImageQuestion>
-        <AnswerWithImage text="" url=""/>
-          <AnswerNoImage text=""/>
-          <AnswerNoImage text=""/>
-          <AnswerNoImage text=""/>
-          <AnswerNoImage text=""/>
-        </OneImageQuestion>
+        {
+          stap===1 && 
+          <>
+            <MultipleChoice4 titel="Hoe schat je je eigen vaardigheden in?">
+              <AnswerWithImage text="" url=""/>
+              <AnswerWithImage text="" url=""/>
+              <AnswerWithImage text="" url=""/>
+              <AnswerWithImage text="" url=""/>
+            </MultipleChoice4>
+            <OneImageQuestion>
+            <AnswerWithImage text="" url=""/>
+              <AnswerNoImage text=""/>
+            </OneImageQuestion>
+          </>
+        }
+        
     </>
   )
 }
