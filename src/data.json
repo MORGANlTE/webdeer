@@ -2,10 +2,20 @@
     "changelog":{
         "logs": [
             {
+                "version": "0.6.0",
+                "title": "Quiz opslaan huidige vraag",
+                "description": "Onthouden van antwoorden, nog niet dynamisch"
+            },
+            {
+                "version": "0.5.0",
+                "title": "Quiz pagina start",
+                "description": "Toevoeging van multiple choice vragen"
+            },
+            {
                 "version": "0.4.1",
                 "title": "Changelog kleine toevoeging van overzicht",
                 "description": "Overzichtelijker maken van de Changelogs"
-            },  
+            },    
             {
                 "version": "0.4.0",
                 "title": "Changelog finale versie",
