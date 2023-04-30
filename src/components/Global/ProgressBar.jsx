@@ -23,7 +23,7 @@ const ProgressBar = (props) => {
     }
   
     return (
-      <div style={containerStyles} className="mx-52 rounded-sm">
+      <div style={containerStyles} className="mx-52 rounded-sm my-5">
         <div style={fillerStyles} className="bg-blue-900 font-fira text-white animate-loading"/>
       </div>
     );

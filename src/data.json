@@ -2,6 +2,11 @@
     "changelog":{
         "logs": [
             {
+                "version": "0.9.0",
+                "title": "Internet vaardigheden",
+                "description": "Zelfinschatting internet vaardigheden toegevoegd"
+            },                 
+            {
                 "version": "0.8.0",
                 "title": "Progres balk",
                 "description": "Balk onderaan voor je voortgang te zien"

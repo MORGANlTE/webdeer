@@ -7,6 +7,7 @@ export const QuizProvider = ({ children }) => {
   const [stap, setStap] = useState(0);
   const [loading, setLoading] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [niveau, setNiveau] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [categories, setCategories] = useState([
     { name: 'Category 1', score: 0, total: 0 },
@@ -39,7 +40,7 @@ export const QuizProvider = ({ children }) => {
     }
   ];
 
-  const handleAnswer = (answer) => {
+  const handleAnswer = useCallback((answer) => {
     const updatedAnswers = [...answers];
     updatedAnswers[currentQuestion] = answer;
     setAnswers(updatedAnswers);
@@ -60,7 +61,7 @@ export const QuizProvider = ({ children }) => {
       setCurrentQuestion(currentQuestion + 1);
     }
     setStap(stap+1)
-  };
+  }, [answers]);
 
   const nextStap = () => {
     setStap(stap+1)
@@ -115,10 +116,12 @@ export const QuizProvider = ({ children }) => {
       handleAnswer,
       categories,
       stap,
-      nextStap
+      nextStap,
+      setNiveau,
+      niveau
     }),
 
-    [loading, currentQuestion, answers, handleAnswer, categories, stap, nextStap]
+    [loading, currentQuestion, answers, handleAnswer, categories, stap, nextStap, setNiveau, niveau]
   );
 
   return (
