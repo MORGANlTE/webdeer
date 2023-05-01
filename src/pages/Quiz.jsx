@@ -7,23 +7,15 @@ import StappenPlan from '../components/Global/StappenPlan'
 
 
 const Quiz = () => {
-	const { stap, categories, currentQuestion, setNiveau, niveau, nextStap } = useQuiz();
-  const updateNiveau = (nr) => {
-    console.log('test')
-    setNiveau(nr)
-    nextStap();
-  };
+	const { stap, categories, currentQuestion, niveau } = useQuiz();
+
   return (
     <>
-        <Navbar/>
+      <Navbar/>
         
-
-        
-       <StappenPlan /> 
+      <StappenPlan /> 
         
       <ProgressBar completed={(currentQuestion/categories.length)*100}/>
-        <p>{stap}</p>
-        <p>{niveau}</p>
     </>
   )
 }

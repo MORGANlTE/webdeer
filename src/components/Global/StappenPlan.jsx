@@ -10,7 +10,7 @@ import AnswerWithImage from '../../components/Quiz/AnswerWithImage'
 import { useQuiz } from '../../context/QuizContext'
 
 const StappenPlan = () => {
-  const { stap, categories, currentQuestion, setNiveau, niveau, nextStap } = useQuiz();
+  const { stap, setNiveau, nextStap } = useQuiz();
   const updateNiveau = (nr) => {
     console.log('test')
     setNiveau(nr)
