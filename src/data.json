@@ -2,6 +2,10 @@
     "changelog":{
         "logs": [
             {
+                "version": "0.10.3",
+                "title": "Foutafhandeling",
+                "description": "Kleine foutafhandeling toegevoegd"
+            },               {
                 "version": "0.10.2",
                 "title": "Foutje uit de flow",
                 "description": "Foutieve flow nogmaals"
