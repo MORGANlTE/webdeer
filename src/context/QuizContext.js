@@ -123,7 +123,7 @@ export const QuizProvider = ({ children }) => {
   }, [answers, stap]);
 
   const nextStap = useCallback(() => {
-    if (stap >= 1) {
+    if (stap >= 2) {
       setCurrentQuestion(currentQuestion + 1);
     }
     setStap(stap + 1);
