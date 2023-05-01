@@ -2,6 +2,11 @@
     "changelog":{
         "logs": [
             {
+                "version": "0.9.1",
+                "title": "Aparte componenten",
+                "description": "Afzondering van de stappen"
+            },             
+            {
                 "version": "0.9.0",
                 "title": "Internet vaardigheden",
                 "description": "Zelfinschatting internet vaardigheden toegevoegd"
