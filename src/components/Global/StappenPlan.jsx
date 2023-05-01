@@ -47,10 +47,10 @@ const StappenPlan = () => {
           stap>=2 && 
           <>
             {
-              (question.isCategoryDescription) && <TextPart text={question.category} subtext={question.description} imgurl={webdeer}/>
+              (question?.isCategoryDescription) && <TextPart text={question.category} subtext={question.description} imgurl={webdeer}/>
             }
-            {(!question.isCategoryDescription) && 
-              (question.isMultipleChoice) && 
+            {(!question?.isCategoryDescription) && 
+              (question?.isMultipleChoice) ? 
                 <>
                   <MultipleChoice4 titel={question.question}>
                     {
@@ -59,9 +59,10 @@ const StappenPlan = () => {
                           <AnswerWithImage key={i} onClick={() => handleAnswer(option.text)} text={option.text} url={option.imgUrl}/>
                         ) 
                     })}
-                    <AnswerWithImage text="Geen internet vaardigheden" url={bronze}/>
                   </MultipleChoice4>
                 </>
+                :
+                <p>End</p>
               }
             
           </>   

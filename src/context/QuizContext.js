@@ -99,7 +99,7 @@ export const QuizProvider = ({ children }) => {
         }
       ],
       answer: 'Mount Everest',
-      isMultipleChoice: false
+      isMultipleChoice: true
     }
   ];
 
