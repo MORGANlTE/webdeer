@@ -2,9 +2,9 @@ import React from 'react'
 
 const AnswerWithImage = (props) => {
   return (
-    <div className="flex flex-col justify-center bg-blu rounded-md w-1/3 mx-1 xl:h-56 h-56 cursor-pointer hover:bg-blu2" onClick={props.onClick}>
-        <img src={props.url} alt="answer" draggable="false" className="w-32 rounded-full mx-auto" />
-        <p className='text-center font-fira text-white text-lg pb-3 px-3 mt-4'>{props.text}</p>
+    <div className="flex flex-col justify-center w-1/3 h-56 mx-1 rounded-md cursor-pointer bg-blu xl:h-56 hover:bg-blu2" onClick={props.onClick}>
+        {props.url && <img src={props.url} alt="answer" draggable="false" className="w-32 mx-auto rounded-full" />}
+        <p className='px-3 pb-3 mt-4 text-lg text-center text-white font-fira'>{props.text}</p>
     </div>
   )
 }

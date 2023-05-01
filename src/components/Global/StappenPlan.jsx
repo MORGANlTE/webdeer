@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import bronze from '../../images/ranks/bronze.png'
 import silver from '../../images/ranks/silver.png'
 import gold from '../../images/ranks/gold.png'
@@ -10,14 +10,23 @@ import AnswerWithImage from '../../components/Quiz/AnswerWithImage'
 import { useQuiz } from '../../context/QuizContext'
 
 const StappenPlan = () => {
-  const { stap, setNiveau, nextStap } = useQuiz();
+  const { stap, setNiveau, nextStap, currentQuestion, questions, handleAnswer } = useQuiz();
   const updateNiveau = (nr) => {
     console.log('test')
+    console.log(stap)
     setNiveau(nr)
     nextStap();
   };
+  const [question, setQuestion] = useState(questions[currentQuestion]);
+
+  useEffect(() => {
+    setQuestion(questions[currentQuestion]);
+  }, [currentQuestion]);
+
   return (
     <>
+    {currentQuestion}
+    {stap}
         {
             stap===0 && (
             <TextPart text="Welkom gebruiker" subtext="Om te starten zouden we je graag je internet vaardigheidsniveau inschatten" imgurl={webdeer}/>
@@ -34,6 +43,32 @@ const StappenPlan = () => {
             </MultipleChoice4>
           </>
         }
+        {
+          stap>=2 && 
+          <>
+            {
+              (question.isCategoryDescription) && <TextPart text={question.category} subtext={question.description} imgurl={webdeer}/>
+            }
+            {(!question.isCategoryDescription) && 
+              (question.isMultipleChoice) && 
+                <>
+                  <MultipleChoice4 titel={question.question}>
+                    {
+                      question.options.map((option, i) => {     
+                        return (
+                          <AnswerWithImage key={i} onClick={() => handleAnswer(option.text)} text={option.text} url={option.imgUrl}/>
+                        ) 
+                    })}
+                    <AnswerWithImage text="Geen internet vaardigheden" url={bronze}/>
+                  </MultipleChoice4>
+                </>
+              }
+            
+          </>   
+
+            
+        }
+        
     </>
   )
 }

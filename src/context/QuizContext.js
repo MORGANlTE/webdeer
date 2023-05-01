@@ -10,33 +10,96 @@ export const QuizProvider = ({ children }) => {
   const [niveau, setNiveau] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [categories, setCategories] = useState([
-    { name: 'Category 1', score: 0, total: 0 },
-    { name: 'Category 2', score: 0, total: 0 },
-    { name: 'Category 3', score: 0, total: 0 },
-    { name: 'Category 4', score: 0, total: 0 },
+    { name: 'Category 1', score: 0, total: 0, info: "test" },
+    { name: 'Category 2', score: 0, total: 0, info: "text" },
+    { name: 'Category 3', score: 0, total: 0, info: "test2" },
+    { name: 'Category 4', score: 0, total: 0, info: "test2" },
   ]);
 
 
   const questions = [
     // Questions for category 1
     {
+      isCategoryDescription: true,
       category: 'Category 1',
-      question: 'What is the capital of France?',
-      options: ['Paris', 'Berlin', 'Madrid', 'London'],
-      answer: 'Paris'
+      description: 'This category tests your knowledge of geography.'
     },
     {
       category: 'Category 1',
-      question: 'What is the largest city in the world by population?',
-      options: ['Tokyo', 'Shanghai', 'São Paulo', 'Delhi'],
-      answer: 'Tokyo'
+      question: 'What is the capital of France?',
+      options: [
+        {
+          text: 'Paris',
+        },
+        {
+          text: 'Berlin',
+          imgUrl: 'https://res.klook.com/image/upload/Mobile/City/swox6wjsl5ndvkv5jvum.jpg'
+        },
+        {
+          text: 'Madrid',
+          imgUrl: 'https://example.com/madrid.jpg'
+        },
+        {
+          text: 'London',
+          imgUrl: 'https://example.com/london.jpg'
+        }
+      ],
+      answer: 'Paris',
+      isMultipleChoice: true
+    },
+    {
+      category: 'Category 1',
+      question: 'AAA?',
+      options: [
+        {
+          text: 'Tokyo',
+          imgUrl: 'https://example.com/paris.jpg'
+        },
+        {
+          text: 'Berlin',
+          imgUrl: 'https://example.com/berlin.jpg'
+        },
+        {
+          text: 'Madrid',
+          imgUrl: 'https://example.com/madrid.jpg'
+        },
+        {
+          text: 'London',
+          imgUrl: 'https://example.com/london.jpg'
+        }
+      ],
+      answer: 'Tokyo',
+      isMultipleChoice: true
     },
     // Questions for category 2
     {
+      isCategoryDescription: true,
+      category: 'Category 2',
+      description: 'This category tests your knowledge of mountains.'
+    },
+    {
       category: 'Category 2',
       question: 'What is the highest mountain in the world?',
-      options: ['Mount Everest', 'K2', 'Makalu', 'Cho Oyu'],
-      answer: 'Mount Everest'
+      options: [
+        {
+          text: 'Mount Everest',
+          imgUrl: 'https://example.com/paris.jpg'
+        },
+        {
+          text: 'Berlin',
+          imgUrl: 'https://example.com/berlin.jpg'
+        },
+        {
+          text: 'Madrid',
+          imgUrl: 'https://example.com/madrid.jpg'
+        },
+        {
+          text: 'London',
+          imgUrl: 'https://example.com/london.jpg'
+        }
+      ],
+      answer: 'Mount Everest',
+      isMultipleChoice: false
     }
   ];
 
@@ -56,16 +119,15 @@ export const QuizProvider = ({ children }) => {
     currentCategory.total++;
     setCategories(updatedCategories);
     
-    // go to the next question
-    if (currentQuestion < questions.length - 1) {
+    nextStap();
+  }, [answers, stap]);
+
+  const nextStap = useCallback(() => {
+    if (stap >= 1) {
       setCurrentQuestion(currentQuestion + 1);
     }
-    setStap(stap+1)
-  }, [answers]);
-
-  const nextStap = () => {
-    setStap(stap+1)
-  };
+    setStap(stap + 1);
+  }, [currentQuestion, stap]);
 
 
 //   //GET-request with woningID (get alle recensies v/d woning)
@@ -118,10 +180,11 @@ export const QuizProvider = ({ children }) => {
       stap,
       nextStap,
       setNiveau,
-      niveau
+      niveau,
+      questions
     }),
 
-    [loading, currentQuestion, answers, handleAnswer, categories, stap, nextStap, setNiveau, niveau]
+    [loading, currentQuestion, answers, handleAnswer, categories, stap, nextStap, setNiveau, niveau, questions]
   );
 
   return (

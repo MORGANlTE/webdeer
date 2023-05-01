@@ -2,6 +2,15 @@
     "changelog":{
         "logs": [
             {
+                "version": "0.10.1",
+                "title": "Fout opgelost met flow",
+                "description": "Foutieve flowdata opgelost"
+            },
+            {
+                "version": "0.10.0",
+                "title": "Flow van de vragen met voorbeelden",
+                "description": "Flow goedgemaakt voor als de data er echt in komt"
+            },            {
                 "version": "0.9.2",
                 "title": "Schoonmaak",
                 "description": "Code schoonmaak"
