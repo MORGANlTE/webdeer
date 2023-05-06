@@ -151,6 +151,38 @@ export const QuizProvider = ({ children }) => {
         if(currentCategory >=5-1)
         {
           setEnded(true)
+          //hier data versturen
+          const uploadData = async () => {
+            
+            let level_estimate = niveau
+            let level = 0;
+
+            categories.forEach((option) => {
+              if (option.score >= option.total / 2) {
+                level++;
+              }
+            });
+            let score = categories.reduce((total, option) => total + option.score, 0)
+            let total_score = categories.reduce((total, option) => total + option.total, 0)
+
+            const data = {
+              level: level,
+              level_estimate: level_estimate,
+              score:score,
+              total_score: total_score
+            }
+
+
+            const response = await fetch(`${BASE_URL}/results`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+            });
+
+          };
+          uploadData();
         }
         else{
           setCurrentCategory(currentCategory + 1);
@@ -159,7 +191,7 @@ export const QuizProvider = ({ children }) => {
       }
     }
     setStap(stap + 1);
-  }, [currentQuestion, stap, questions, currentCategory, ended]);
+  }, [currentQuestion, stap, questions, currentCategory, ended, categories, niveau]);
 
 
 //   //GET-request with woningID (get alle recensies v/d woning)
