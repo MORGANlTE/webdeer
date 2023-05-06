@@ -2,6 +2,10 @@
     "changelog":{
         "logs": [
             {
+                "version": "2.2.0",
+                "title": "Website en API staan online",
+                "description": "Alles zou nu online moeten staan"
+            },{
                 "version": "2.1.0",
                 "title": "Databank staat online",
                 "description": "Databank op het internet omsloten via Render"
