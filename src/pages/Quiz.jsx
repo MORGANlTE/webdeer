@@ -17,9 +17,9 @@ const Quiz = () => {
 
   return (
     <>
+      <Navbar />
       {!loading && (
         <>
-          <Navbar />
           <StappenPlan />
           <ProgressBar
             completed={

@@ -2,6 +2,10 @@
     "changelog":{
         "logs": [
             {
+                "version": "2.3.0",
+                "title": "Over pagina & privacy pagina toegevoegd",
+                "description": "Over pagina & privacy pagina toegevoegd"
+            },{
                 "version": "2.2.0",
                 "title": "Website en API staan online",
                 "description": "Alles zou nu online moeten staan"

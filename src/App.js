@@ -8,6 +8,7 @@ import Changelog from './pages/Changelog';
 import { QuizProvider } from './context/QuizContext';
 import { createContext } from 'react';
 import Results from './pages/Results';
+import Privacy from './pages/Privacy';
 
 function App() {
   
@@ -28,9 +29,13 @@ function App() {
               path="/quiz"
               element={<Quiz/>}
               />
-               <Route 
+              <Route 
               path="/results"
               element={<Results/>}
+              />
+              <Route 
+              path="/privacy"
+              element={<Privacy/>}
               />
             <Route path="/home" element={<Navigate to="/" replace={true} />} />
             <Route exact path="/" element={<Home/>} />
