@@ -154,7 +154,7 @@ export const QuizProvider = ({ children }) => {
           //hier data versturen
           const uploadData = async () => {
             
-            let level_estimate = niveau
+            let level_estimate = niveau+1
             let level = 0;
 
             categories.forEach((option) => {
