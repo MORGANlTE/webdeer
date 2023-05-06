@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Changelog from './pages/Changelog';
 import { QuizProvider } from './context/QuizContext';
 import { createContext } from 'react';
+import Results from './pages/Results';
 
 function App() {
   
@@ -26,6 +27,10 @@ function App() {
               <Route 
               path="/quiz"
               element={<Quiz/>}
+              />
+               <Route 
+              path="/results"
+              element={<Results/>}
               />
             <Route path="/home" element={<Navigate to="/" replace={true} />} />
             <Route exact path="/" element={<Home/>} />

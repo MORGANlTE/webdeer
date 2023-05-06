@@ -2,6 +2,41 @@
     "changelog":{
         "logs": [
             {
+                "version": "1.4.0",
+                "title": "Resultaten overzicht",
+                "description": "Overzicht van de resultaten"
+            },
+            {
+                "version": "1.3.0",
+                "title": "Eindscherm toegevoegd",
+                "description": "Na de vragen toegevoegd"
+            },{
+                "version": "1.2.0",
+                "title": "Vragen toegevoegd",
+                "description": "Nog extra vragen toegevoegd"
+            },
+            {
+                "version": "1.1.2",
+                "title": "Stappentracker extra fix",
+                "description": "Nog een foutje uit de stappentracker"
+            },{
+                "version": "1.1.1",
+                "title": "Stappentracker pagina fix",
+                "description": "Fout uit de stappen tracker pagina gehaald"
+            },{
+                "version": "1.1.0",
+                "title": "Stappentracker fix",
+                "description": "Fout uit de stappen tracker gehaald"
+            },{
+                "version": "1.0.1",
+                "title": "Fout opgelost met visualisatie",
+                "description": "Zichtbare meerkeuze en stappen vervolledigd"
+            },
+            {
+                "version": "1.0.0",
+                "title": "API en databank toegevoegd",
+                "description": "API en databank toegevoegd"
+            },{
                 "version": "0.10.3",
                 "title": "Foutafhandeling",
                 "description": "Kleine foutafhandeling toegevoegd"
