@@ -5,7 +5,7 @@ export const useQuiz = () => useContext(QuizContext);
 
 export const QuizProvider = ({ children }) => {
 
-  const BASE_URL = 'http://127.0.0.1:8000/api';
+  const BASE_URL = 'https://webdeer-backend.onrender.com/api';
 
   const [ended, setEnded] = useState(false);
   const [stap, setStap] = useState(0);
