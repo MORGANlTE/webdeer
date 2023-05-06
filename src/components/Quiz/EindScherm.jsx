@@ -59,7 +59,7 @@ const EindScherm = () => {
                     <img
                       key={i}
                       alt={option.name}
-                      className="w-24 mx-auto my-3 bg-blue-100 rounded-full"
+                      className="w-24 mx-auto my-3 bg-blue-100 rounded-full hover:brightness-110"
                       src={
                         i === 0
                           ? icon1

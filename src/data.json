@@ -2,6 +2,10 @@
     "changelog":{
         "logs": [
             {
+                "version": "2.1.0",
+                "title": "Databank staat online",
+                "description": "Databank op het internet omsloten via Render"
+            },{
                 "version": "2.0.0",
                 "title": "Score opgeslagen in databank",
                 "description": "Jouw score wordt opgeslagen in de databank"
