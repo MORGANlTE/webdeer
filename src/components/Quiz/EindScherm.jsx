@@ -33,7 +33,7 @@ const EindScherm = () => {
                   {option.name}
                 </p>
                 <p
-                  className={`bg-blu w-fit mx-auto py-3 p-3 rounded-full text-white ${
+                  className={`bg-blu w-fit mx-auto py-3 p-3 rounded-full ${
                     option.score === option.total
                       ? "text-green-400"
                       : option.score + 1 < option.total / 2

@@ -89,7 +89,7 @@ const StappenPlan = () => {
                       return (
                         <AnswerWithImage
                           key={i}
-                          onClick={() => handleAnswer(option.correct)}
+                          onClick={() => handleAnswer(option)}
                           text={option.text}
                           url={option.imgUrl}
                         />

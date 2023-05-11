@@ -117,10 +117,10 @@ export const QuizProvider = ({ children }) => {
   // ];
 
   const handleAnswer = useCallback((answer) => {
-    console.log(answer)
-    console.log(categories[currentCategory])
+    setAnswers([...answers, answer])
+
     categories[currentCategory].total += 1
-    if(answer)
+    if(answer.correct)
     categories[currentCategory].score += 1
 
     // // update the score and total for the category
@@ -135,7 +135,7 @@ export const QuizProvider = ({ children }) => {
     // setCategories(updatedCategories);
     
     nextStap();
-  }, [answers, stap, categories, currentCategory]);
+  }, [answers, stap, categories, currentCategory, answers]);
 
   const nextStap = useCallback(() => {
     if(ended)
