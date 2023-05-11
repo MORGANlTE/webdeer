@@ -29,6 +29,7 @@ const Results = () => {
     }
   };
   console.log(answers);
+  console.log(questions);
 
   const niveauTotaalIcon = useCallback(() => {
     switch (gottenPoints) {
@@ -120,14 +121,87 @@ const Results = () => {
               ⇩ Jouw antwoorden ⇩
             </p> */}
           </div>
-          {/* <div className="px-10 py-5 mx-auto my-16 mt-20 bg-blue-300 rounded-md w-fit font-fira text-background">
-            {answers.map((a, i) => {
-              return 
-              <div key={i}>
-                {a.text}
-                </div>;
+          <div className="px-10 py-5 mx-auto my-16 mt-20 bg-blue-300 rounded-md w-fit font-fira text-background">
+            {gottenPoints !== totalPoints && (
+              <h3 className="mb-2 text-3xl text-white">Aanbevolen weblinks:</h3>
+            )}
+            {gottenPoints === totalPoints && (
+              <h3 className="mb-2 text-3xl text-yellow-800">
+                Proficiat met je hoge score!
+              </h3>
+            )}
+
+            {categories.map((cat, i) => {
+              return (
+                cat.score < cat.total / 2 && (
+                  <div className="flex flex-col justify-center mb-6">
+                    <p className="text-xl font-bold text-blu">{cat.name}</p>
+                    {cat.urls.map((url, i) => {
+                      return (
+                        <a
+                          key={i}
+                          href={url}
+                          rel="nofollow noreferrer"
+                          target="_blank"
+                          className="text-blue-800 text-md"
+                        >
+                          {url}
+                        </a>
+                      );
+                    })}
+                  </div>
+                )
+              );
             })}
-          </div> */}
+          </div>
+          <div className="px-10 py-5 mx-auto my-16 mt-20 bg-blue-300 rounded-md w-fit font-fira text-background">
+            <h3 className="mb-2 text-3xl text-white">Jouw antwoorden:</h3>
+            {categories.map((a, i) => {
+              return (
+                <div key={i}>
+                  <p className="mt-12 text-xl font-bold text-blu">{a.name}</p>
+                  {questions[i].map((question, counter) => {
+                    return (
+                      counter > 1 && (
+                        <>
+                          <p className="mt-20 mb-3 text-xl">
+                            {question.question}
+                          </p>
+                          <p>Jouw antwoord:</p>
+                          <p
+                            className={`${
+                              answers[counter - 1 + i * categories.length]
+                                .correct
+                                ? "text-green-700"
+                                : "text-red-800"
+                            } text-xl`}
+                          >
+                            {answers[counter - 1 + i * categories.length].text}{" "}
+                            {answers[counter - 1 + i * categories.length]
+                              .correct
+                              ? " (correct)"
+                              : " (fout)"}
+                          </p>
+                          {answers[counter - 1 + i * categories.length]
+                            .imgUrl && (
+                            <img
+                              src={
+                                answers[counter - 1 + i * categories.length]
+                                  .imgUrl
+                              }
+                              alt="answer"
+                              draggable="false"
+                              className="mx-auto rounded-sm max-w-[10%] max-h-[52%]"
+                            />
+                          )}
+                        </>
+                      )
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
         </>
       )}
     </>

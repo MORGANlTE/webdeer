@@ -15,11 +15,11 @@ export const QuizProvider = ({ children }) => {
   const [niveau, setNiveau] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [categories, setCategories] = useState([
-    { name: 'Operationele internet vaardigheid', score: 0, total: 0 },
-    { name: 'Formele internet vaardigheid', score: 0, total: 0 },
-    { name: 'Informatie internet vaardigheid', score: 0, total: 0 },
-    { name: 'Strategische internet vaardigheid', score: 0, total: 0 },
-    { name: 'Veiligheid internet vaardigheid', score: 0, total: 0 },
+    { name: 'Operationele internet vaardigheid', score: 0, total: 0, urls:["https://www.seniorweb.nl/onderwerp/internetbrowsers"] },
+    { name: 'Formele internet vaardigheid', score: 0, total: 0, urls:["https://www.mediawijsheid.nl/veelgestelde-vraag/wat-is-digitaal-burgerschap/"] },
+    { name: 'Informatie internet vaardigheid', score: 0, total: 0, urls:["https://www.mediawijsheid.nl/nepnieuws/", "https://www.seniorweb.nl/onderwerp/zoeken-op-internet"]},
+    { name: 'Strategische internet vaardigheid', score: 0, total: 0, urls:["https://auxipress.be/nl/uw-online-reputatie-beheren-en-beschermen/"] },
+    { name: 'Veiligheid internet vaardigheid', score: 0, total: 0, urls:["https://veiliginternetten.nl/", "https://www.dnsbelgium.be/nl/slim-online/tips-veiligheid-internet"] },
   ]);
   const [questions, setQuestions] = useState([]);
   useEffect(() => {

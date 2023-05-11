@@ -2,6 +2,14 @@
     "changelog":{
         "logs": [
             {
+                "version": "3.1.0",
+                "title": "Laad icoon en meer feedback",
+                "description": "Een icoon voorzien indien de website aan het laden is, ook extra feedback voorzien."
+            },{
+                "version": "3.0.0",
+                "title": "Antwoorden en feedback",
+                "description": "Op het einde van de vragenlijst kan je nu ook jouw antwoorden inkijken en eventuele weblinks aangeboden krijgen"
+            },{
                 "version": "2.4.0",
                 "title": "Opslaan antwoorden voor feedback",
                 "description": "Opslaan van de antwoorden lokaal voor latere feedback en inkijk in wat de antwoorden waren"
