@@ -5,6 +5,10 @@ import { useQuiz } from "../context/QuizContext";
 import ProgressBar from "../components/Global/ProgressBar";
 import StappenPlan from "../components/Global/StappenPlan";
 import { NavLink } from "react-router-dom";
+import one from "../images/ranks/one.png";
+import two from "../images/ranks/two.png";
+import three from "../images/ranks/three.png";
+import four from "../images/ranks/four.png";
 import bronze from "../images/ranks/bronze.png";
 import silver from "../images/ranks/silver.png";
 import gold from "../images/ranks/gold.png";
@@ -17,13 +21,13 @@ const Results = () => {
   const niveauIcon = () => {
     switch (niveau) {
       case 1:
-        return bronze;
+        return one;
       case 2:
-        return silver;
+        return two;
       case 3:
-        return gold;
+        return three;
       case 4:
-        return diamond;
+        return four;
       default:
         return;
     }
@@ -32,6 +36,23 @@ const Results = () => {
   console.log(questions);
 
   const niveauTotaalIcon = useCallback(() => {
+    switch (gottenPoints) {
+      case 0:
+      case 1:
+        return one;
+      case 2:
+      case 3:
+        return two;
+      case 4:
+        return three;
+      case 5:
+        return four;
+      default:
+        return;
+    }
+  }, [gottenPoints]);
+
+  const yourRank = useCallback(() => {
     switch (gottenPoints) {
       case 0:
       case 1:
@@ -106,6 +127,14 @@ const Results = () => {
               </div>
             </div>
             <div>
+              <img
+                src={yourRank()}
+                alt="rank"
+                className="w-16 mx-auto rounded-full hover:brightness-110"
+                draggable="false"
+              />
+            </div>
+            <div>
               <p className="my-8 text-md">
                 Je bent geslaagd voor {gottenPoints} van de {totalPoints}{" "}
                 onderdelen
@@ -162,7 +191,7 @@ const Results = () => {
                   <p className="mt-12 text-xl font-bold text-blu">{a.name}</p>
                   {questions[i].map((question, counter) => {
                     return (
-                      counter > 1 && (
+                      counter >= 1 && (
                         <>
                           <p className="mt-20 mb-3 text-xl">
                             {question.question}

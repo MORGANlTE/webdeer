@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import bronze from "../../images/ranks/bronze.png";
-import silver from "../../images/ranks/silver.png";
-import gold from "../../images/ranks/gold.png";
-import diamond from "../../images/ranks/diamond.png";
+import one from "../../images/ranks/one.png";
+import two from "../../images/ranks/two.png";
+import three from "../../images/ranks/three.png";
+import four from "../../images/ranks/four.png";
 import webdeer from "../../images/deer.png"; // with import
 import TextPart from "../../components/Quiz/TextPart";
 import MultipleChoice4 from "../../components/Quiz/MultipleChoice4";
@@ -53,22 +53,22 @@ const StappenPlan = () => {
                 <AnswerWithImage
                   onClick={() => updateNiveau(1)}
                   text="Geen internet vaardigheden"
-                  url={bronze}
+                  url={one}
                 />
                 <AnswerWithImage
                   onClick={() => updateNiveau(2)}
                   text="Beperkte internet vaardigheid"
-                  url={silver}
+                  url={two}
                 />
                 <AnswerWithImage
                   onClick={() => updateNiveau(3)}
                   text="Goed internetvaardig"
-                  url={gold}
+                  url={three}
                 />
                 <AnswerWithImage
                   onClick={() => updateNiveau(4)}
                   text="Ik heb alle basisvaardigheden van het internet"
-                  url={diamond}
+                  url={four}
                 />
               </MultipleChoice4>
             </>

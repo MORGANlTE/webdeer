@@ -2,6 +2,18 @@
     "changelog":{
         "logs": [
             {
+                "version": "4.0.1",
+                "title": "Fout opgelost",
+                "description": "Fout uit de resultaten gehaald"
+            },{
+                "version": "4.0.0",
+                "title": "Vernieuwing iconen en uitslag",
+                "description": "Nieuwere look resultaat en navbar"
+            },{
+                "version": "3.2.0",
+                "title": "Extra tekst verwijdert",
+                "description": "Extra tekst bij feedback weggelaten"
+            },{
                 "version": "3.1.0",
                 "title": "Laad icoon en meer feedback",
                 "description": "Een icoon voorzien indien de website aan het laden is, ook extra feedback voorzien."

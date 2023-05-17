@@ -14,9 +14,6 @@ const EindScherm = () => {
     <>
       <div className="px-10 py-5 mx-auto my-16 mt-20 bg-blue-300 rounded-md w-fit font-fira">
         <h3 className="text-4xl text-white font-fira">Eindresultaten:</h3>
-        <h4 className="text-xl text-blu font-fira">
-          Eerst en vooral proficiat! Dit waren moeilijke vragen
-        </h4>
         <br />
         <div className="grid grid-cols-2 gap-2">
           {categories.map((option, i) => {
